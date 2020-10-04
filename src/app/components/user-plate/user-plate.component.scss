@@ -1,0 +1,53 @@
+.authButton {
+  padding: 10px;
+  background-color: burlywood;
+  border-radius: 10px;
+  font-size: 3rem;
+  line-height: 3rem;
+  cursor: pointer;
+}
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+.userAvatar {
+  margin-right: 20px;
+  border-radius: 50%;
+  border: 1px solid lightgrey;
+  height: 40px;
+  width: 40px;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.userName {
+  font-size: 2rem;
+  display: none;
+}
+.userButton {
+  outline: none;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transition: all .4s;
+}
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+@media (min-width: 600px) {
+  .userName {
+    display: block;
+  }
+  .userButton {
+    display: none;
+  }
+}

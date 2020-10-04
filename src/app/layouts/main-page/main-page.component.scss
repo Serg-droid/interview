@@ -1,0 +1,16 @@
+.fullScreenBlock {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.top {
+  height: 110px;
+  background-color: cadetblue;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.bottom {
+  flex: 1;
+  background-color: aquamarine;
+}

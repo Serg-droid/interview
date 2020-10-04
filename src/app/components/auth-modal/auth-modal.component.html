@@ -1,0 +1,73 @@
+<div class="modalWrapper" (click)="handleModalClick($event)">
+  <div class="modalContent">
+
+    <h1>{{isLoginFormShowed ? 'Вход' : 'Регистрация'}}</h1>
+    <form [formGroup]="form" (submit)="onSubmit()">
+      <div class="inputBlock loginBlock">
+        <label for="email">E-mail</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          [ngClass]="form.get('email').touched && form.get('email').invalid
+          ? 'inputInvalid'
+          : ''"
+        >
+        <div
+          class="validation"
+          *ngIf="form.get('email').touched && form.get('email').invalid"
+        >
+          <small *ngIf="form.get('email').errors.required">
+            Поле email не должно быть пустым
+          </small>
+          <small *ngIf="form.get('email').errors.email">
+            Введите корректный email
+          </small>
+        </div>
+      </div>
+
+      <div class="inputBlock passwordBlock">
+        <label for="password">Пароль</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          [ngClass]="form.get('password').touched && form.get('password').invalid
+          ? 'inputInvalid'
+          : ''"        >
+        <div
+          class="validation"
+          *ngIf="form.get('password').touched && form.get('password').invalid"
+        >
+          <small *ngIf="form.get('password').errors.required">
+            Введите пароль
+          </small>
+          <small *ngIf="form.get('password').errors.minlength">
+            Пароль должен быть не менее
+            {{form.get('password').errors.minlength['requiredLength']}}
+            символов. Сйчас он
+            {{form.get('password').errors.minlength['actualLength']}}
+            символов
+          </small>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="submitButton"
+        [disabled]="form.invalid || submitted"
+      >
+        {{isLoginFormShowed ? 'Войти' : 'Готово'}}
+      </button>
+    </form>
+
+    <div class="links">
+      <a href="#"
+         (click)="switchLogReg($event)"
+      >{{isLoginFormShowed ? 'Регистрация' : 'Вход'}}
+      </a>
+      <a href="#">Забыли пароль?</a>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="fullScreenBlock">
+  <div class="top">
+    <app-user-plate
+      (dataChanged)="handleDataChanged($event)"
+    ></app-user-plate>
+  </div>
+  <div class="bottom">
+
+  </div>
+
+  <app-auth-modal
+    *ngIf="showAuthModal"
+    (dataChanged)="handleDataChanged($event)"
+  ></app-auth-modal>
+</div>

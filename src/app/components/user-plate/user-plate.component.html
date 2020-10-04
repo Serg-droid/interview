@@ -1,0 +1,27 @@
+<div class="userPlate">
+
+    <div class="userInfo" *ngIf="isAuthorized; else authButton">
+      <div
+        class="userAvatar"
+        style="background-image: url({{imageSource}})"
+      ></div>
+      <div class="userNameWrapper">
+        <div class="userName">
+          Борис Горохов
+        </div>
+        <button
+          class="userButton"
+          (click)="userBtnToggle = !userBtnToggle"
+        >
+          <i class="arrow" [class.up]="userBtnToggle"></i>
+        </button>
+      </div>
+    </div>
+
+    <ng-template #authButton>
+      <button class="authButton" (click)="showAuthModal()">
+        Авторизоваться
+      </button>
+    </ng-template>
+</div>
+
