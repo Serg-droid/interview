@@ -13,4 +13,17 @@
 .bottom {
   flex: 1;
   background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  p {
+    font-size: 1.9rem;
+    max-width: 400px;
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 20px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
 }
